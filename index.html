@@ -1,15 +1,90 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Your Name</title>
+
+    <!-- Pico.css -->
     <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+    <meta name="color-scheme" content="light dark" />
   </head>
+
   <body>
     <main class="container">
-      <h1>Deployed ✅</h1>
-      <p>This is my GitHub Pages personal site.</p>
+      <nav>
+        <ul>
+          <li><strong>Your Name</strong></li>
+        </ul>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact" role="button">Contact</a></li>
+        </ul>
+      </nav>
+
+      <header style="padding-top: 2rem;">
+        <h1>Deployed ✅</h1>
+        <p>
+          I’m a statistics graduate student building ML systems + research projects
+          (VI, graphs, recommender systems).
+        </p>
+
+        <div style="display:flex; gap: .75rem; flex-wrap: wrap;">
+          <a href="#projects" role="button">See Projects</a>
+          <a href="https://github.com/YOURUSERNAME" class="secondary">GitHub</a>
+          <a href="#" class="secondary">Resume</a>
+        </div>
+      </header>
+
+      <section id="about">
+        <h2>About</h2>
+        <p>
+          Write 3–5 lines about what you do, what you’re interested in, and what you’re building.
+          Keep it simple and specific.
+        </p>
+      </section>
+
+      <section id="projects">
+        <h2>Projects</h2>
+
+        <article>
+          <h3>Real-Time Personalized Feed Ranking Engine</h3>
+          <p>
+            End-to-end retrieval → ranking → evaluation system with offline metrics and diagnostics.
+          </p>
+          <footer>
+            <a href="#" role="button" class="secondary">Read more</a>
+            <a href="#" role="button" class="secondary">Code</a>
+          </footer>
+        </article>
+
+        <article>
+          <h3>SDM-CAR: Spectral-Density-Modulated CAR Models</h3>
+          <p>
+            Research-focused spatial modeling with spectral filters and variational inference.
+          </p>
+          <footer>
+            <a href="#" role="button" class="secondary">Paper</a>
+            <a href="#" role="button" class="secondary">Code</a>
+          </footer>
+        </article>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>
+          Email: <a href="mailto:you@example.com">you@example.com</a>
+        </p>
+      </section>
+
+      <footer style="padding: 2rem 0; opacity: .7;">
+        <small>© <span id="y"></span> Your Name</small>
+      </footer>
     </main>
+
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
