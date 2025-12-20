@@ -1,20 +1,42 @@
+```html
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Your Name</title>
+    <title>Pratik Dahal</title>
 
     <!-- Pico.css -->
     <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
     <meta name="color-scheme" content="light dark" />
+
+    <style>
+      main.container { max-width: 900px; }
+
+      nav { margin-top: 1rem; }
+
+      header.hero { padding: 2.5rem 0 1.5rem; }
+      .muted { opacity: .75; }
+
+      .cta { display: flex; gap: .75rem; flex-wrap: wrap; margin-top: 1rem; }
+
+      section { padding-top: 1.5rem; }
+
+      .projects-grid { display: grid; gap: 1rem; }
+      article h3 { margin-bottom: .25rem; }
+      article p { margin-bottom: .75rem; }
+
+      footer.actions { display: flex; gap: .5rem; flex-wrap: wrap; }
+
+      footer.site-footer { padding: 2rem 0; opacity: .7; }
+    </style>
   </head>
 
   <body>
     <main class="container">
       <nav>
         <ul>
-          <li><strong>Your Name</strong></li>
+          <li><strong>Pratik Dahal</strong></li>
         </ul>
         <ul>
           <li><a href="#about">About</a></li>
@@ -23,16 +45,15 @@
         </ul>
       </nav>
 
-      <header style="padding-top: 2rem;">
-        <h1>Deployed ✅</h1>
-        <p>
-          I’m a statistics graduate student building ML systems + research projects
-          (VI, graphs, recommender systems).
+      <header class="hero">
+        <h1>Pratik Dahal</h1>
+        <p class="muted">
+          Statistics graduate student building ML systems and research tooling — variational inference, graphs, and recommendation.
         </p>
 
-        <div style="display:flex; gap: .75rem; flex-wrap: wrap;">
+        <div class="cta">
           <a href="#projects" role="button">See Projects</a>
-          <a href="https://github.com/YOURUSERNAME" class="secondary">GitHub</a>
+          <a href="https://github.com/dahlp94" class="secondary">GitHub</a>
           <a href="#" class="secondary">Resume</a>
         </div>
       </header>
@@ -40,46 +61,49 @@
       <section id="about">
         <h2>About</h2>
         <p>
-          Write 3–5 lines about what you do, what you’re interested in, and what you’re building.
-          Keep it simple and specific.
+          I build end-to-end machine learning systems and research-oriented modeling tools, with an emphasis on
+          scalable inference, evaluation, and clean, reproducible code. Current interests include variational inference,
+          graph-based learning, recommender systems, and Bayesian spatial models.
         </p>
       </section>
 
       <section id="projects">
         <h2>Projects</h2>
 
-        <article>
-          <h3>Real-Time Personalized Feed Ranking Engine</h3>
-          <p>
-            End-to-end retrieval → ranking → evaluation system with offline metrics and diagnostics.
-          </p>
-          <footer>
-            <a href="#" role="button" class="secondary">Read more</a>
-            <a href="#" role="button" class="secondary">Code</a>
-          </footer>
-        </article>
+        <div class="projects-grid">
+          <article>
+            <h3>Real-Time Personalized Feed Ranking Engine</h3>
+            <p>
+              End-to-end retrieval → ranking → evaluation system with offline metrics, diagnostics, and monitoring-style reporting.
+            </p>
+            <footer class="actions">
+              <a href="#" role="button" class="secondary">Read more</a>
+              <a href="#" role="button" class="secondary">Code</a>
+            </footer>
+          </article>
 
-        <article>
-          <h3>SDM-CAR: Spectral-Density-Modulated CAR Models</h3>
-          <p>
-            Research-focused spatial modeling with spectral filters and variational inference.
-          </p>
-          <footer>
-            <a href="#" role="button" class="secondary">Paper</a>
-            <a href="#" role="button" class="secondary">Code</a>
-          </footer>
-        </article>
+          <article>
+            <h3>SDM-CAR: Spectral-Density-Modulated CAR Models</h3>
+            <p>
+              Research-focused spatial modeling using spectral filters on graph Laplacians, with variational inference and diagnostics.
+            </p>
+            <footer class="actions">
+              <a href="#" role="button" class="secondary">Paper</a>
+              <a href="#" role="button" class="secondary">Code</a>
+            </footer>
+          </article>
+        </div>
       </section>
 
       <section id="contact">
         <h2>Contact</h2>
         <p>
-          Email: <a href="mailto:you@example.com">you@example.com</a>
+          Email: <a href="mailto:mapratikdahal@gmail.com">mapratikdahal@gmail.com</a>
         </p>
       </section>
 
-      <footer style="padding: 2rem 0; opacity: .7;">
-        <small>© <span id="y"></span> Your Name</small>
+      <footer class="site-footer">
+        <small>© <span id="y"></span> Pratik Dahal</small>
       </footer>
     </main>
 
@@ -88,3 +112,4 @@
     </script>
   </body>
 </html>
+```
