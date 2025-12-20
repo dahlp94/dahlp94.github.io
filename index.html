@@ -28,14 +28,28 @@
       footer.actions { display: flex; gap: .5rem; flex-wrap: wrap; }
 
       footer.site-footer { padding: 2rem 0; opacity: .7; }
+
+      /* Avatar */
+      .brand a { display: flex; align-items: center; gap: .6rem; text-decoration: none; }
+      .brand img { border-radius: 999px; object-fit: cover; }
     </style>
   </head>
 
   <body>
     <main class="container">
       <nav>
-        <ul>
-          <li><strong>Pratik Dahal</strong></li>
+        <ul class="brand">
+          <li>
+            <a href="#" aria-label="Home">
+              <img
+                src="assets/avatar.png"
+                alt="Pratik Dahal"
+                width="40"
+                height="40"
+              />
+              <strong>Pratik Dahal</strong>
+            </a>
+          </li>
         </ul>
         <ul>
           <li><a href="#about">About</a></li>
