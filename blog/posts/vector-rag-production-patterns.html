@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Building a production-style Vector RAG backend with FastAPI, Supabase, and modern LLM APIs."
+    />
+    <title>Vector RAG Backend | Pratik Dahal</title>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css" />
+    <meta name="color-scheme" content="light dark" />
+    <style>
+      main.container,
+      nav.container {
+        max-width: 900px;
+      }
+      nav {
+        margin-top: 1rem;
+      }
+      .muted {
+        opacity: 0.75;
+      }
+      section {
+        padding-top: 1.25rem;
+      }
+      footer.site-footer {
+        padding: 2rem 0;
+        opacity: 0.7;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="container">
+      <ul>
+        <li><strong><a href="/">Pratik Dahal</a></strong></li>
+      </ul>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/blog/">Writing</a></li>
+      </ul>
+    </nav>
+
+    <main class="container">
+      <article>
+        <header>
+          <h1>Building a production-style Vector RAG backend</h1>
+          <p class="muted">
+            Why this matters: useful LLM systems need fast retrieval, grounded outputs, and clear traceability to source content.
+          </p>
+          <small><time datetime="2026-03-24">March 24, 2026</time></small>
+        </header>
+
+        <section>
+          <h2>Problem</h2>
+          <p>
+            RAG prototypes often work in demos but fail under real usage due to latency, weak
+            retrieval quality, and poor observability of where answers come from.
+          </p>
+        </section>
+
+        <section>
+          <h2>Approach</h2>
+          <p>
+            I built a FastAPI service with Supabase-backed vector search and integrated modern
+            LLM APIs, with retrieval and response flows designed for grounded, citation-aware output.
+          </p>
+        </section>
+
+        <section>
+          <h2>Result</h2>
+          <p>
+            The backend supports low-latency semantic retrieval and improves answer relevance while
+            preserving source traceability for production-style LLM applications.
+          </p>
+        </section>
+
+        <section>
+          <h2>Project Link</h2>
+          <p>
+            <a href="https://github.com/dahlp94/vector-rag" target="_blank" rel="noopener noreferrer"
+              >Vector RAG repository</a
+            >
+          </p>
+        </section>
+      </article>
+
+      <footer class="site-footer">
+        <small>© <span id="y"></span> Pratik Dahal</small>
+      </footer>
+    </main>
+
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

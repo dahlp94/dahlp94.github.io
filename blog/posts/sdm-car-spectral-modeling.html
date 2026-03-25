@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="SDM-CAR explained: spectral graph structure, collapsed variational inference, and MCMC for spatial Bayesian modeling."
+    />
+    <title>SDM-CAR Explained | Pratik Dahal</title>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css" />
+    <meta name="color-scheme" content="light dark" />
+    <style>
+      main.container,
+      nav.container {
+        max-width: 900px;
+      }
+      nav {
+        margin-top: 1rem;
+      }
+      .muted {
+        opacity: 0.75;
+      }
+      section {
+        padding-top: 1.25rem;
+      }
+      footer.site-footer {
+        padding: 2rem 0;
+        opacity: 0.7;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="container">
+      <ul>
+        <li><strong><a href="/">Pratik Dahal</a></strong></li>
+      </ul>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/blog/">Writing</a></li>
+      </ul>
+    </nav>
+
+    <main class="container">
+      <article>
+        <header>
+          <h1>SDM-CAR explained: spectral structure in spatial Bayesian modeling</h1>
+          <p class="muted">
+            Why this matters: modeling graph spectral structure can reduce misspecification error and improve spatial prediction.
+          </p>
+          <small><time datetime="2026-03-23">March 23, 2026</time></small>
+        </header>
+
+        <section>
+          <h2>Problem</h2>
+          <p>
+            Classical CAR models can underperform when spatial dependencies do not match their
+            assumptions, causing bias and weaker predictive performance under misspecification.
+          </p>
+        </section>
+
+        <section>
+          <h2>Approach</h2>
+          <p>
+            SDM-CAR introduces spectral-density modulation over graph structure and uses collapsed
+            variational inference with MCMC diagnostics to capture richer spatial patterns.
+          </p>
+        </section>
+
+        <section>
+          <h2>Result</h2>
+          <p>
+            The framework recovers complex graph spectral signals and improves robustness and
+            predictive performance compared with classical CAR baselines.
+          </p>
+        </section>
+
+        <section>
+          <h2>Project Link</h2>
+          <p>
+            <a href="https://github.com/dahlp94/sdm-car" target="_blank" rel="noopener noreferrer"
+              >SDM-CAR repository</a
+            >
+          </p>
+        </section>
+      </article>
+
+      <footer class="site-footer">
+        <small>© <span id="y"></span> Pratik Dahal</small>
+      </footer>
+    </main>
+
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
