@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Writing by Pratik Dahal on machine learning systems, applied research, and engineering."
+    />
+    <title>Writing | Pratik Dahal</title>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css" />
+    <meta name="color-scheme" content="light dark" />
+    <style>
+      main.container,
+      nav.container {
+        max-width: 900px;
+      }
+      nav {
+        margin-top: 1rem;
+      }
+      .muted {
+        opacity: 0.75;
+      }
+      section {
+        padding-top: 1.5rem;
+      }
+      footer.site-footer {
+        padding: 2rem 0;
+        opacity: 0.7;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="container">
+      <ul>
+        <li><strong><a href="/">Pratik Dahal</a></strong></li>
+      </ul>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/#projects">Projects</a></li>
+        <li><a href="/blog/" aria-current="page">Writing</a></li>
+      </ul>
+    </nav>
+
+    <main class="container">
+      <header>
+        <h1>Writing</h1>
+        <p class="muted">
+          Notes on machine learning systems, probabilistic modeling, and production engineering.
+        </p>
+      </header>
+
+      <section>
+        <article>
+          <h2>
+            <a href="/blog/posts/bayespilot-system-design.html"
+              >Designing BayesPilot: from model training to deployment decisions</a
+            >
+          </h2>
+          <p>
+            A practical walkthrough of how I structured end-to-end training, evaluation, and rollout
+            workflows for a production-oriented ML decision-support system.
+          </p>
+          <small><time datetime="2026-03-25">March 25, 2026</time></small>
+        </article>
+      </section>
+
+      <footer class="site-footer">
+        <small>© <span id="y"></span> Pratik Dahal</small>
+      </footer>
+    </main>
+
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

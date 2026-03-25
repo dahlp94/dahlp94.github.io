@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Designing BayesPilot: structuring model training, evaluation, and deployment decisions in a production-oriented ML workflow."
+    />
+    <title>Designing BayesPilot | Pratik Dahal</title>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css" />
+    <meta name="color-scheme" content="light dark" />
+    <style>
+      main.container,
+      nav.container {
+        max-width: 900px;
+      }
+      nav {
+        margin-top: 1rem;
+      }
+      .muted {
+        opacity: 0.75;
+      }
+      section {
+        padding-top: 1.25rem;
+      }
+      footer.site-footer {
+        padding: 2rem 0;
+        opacity: 0.7;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="container">
+      <ul>
+        <li><strong><a href="/">Pratik Dahal</a></strong></li>
+      </ul>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/blog/">Writing</a></li>
+      </ul>
+    </nav>
+
+    <main class="container">
+      <article>
+        <header>
+          <h1>Designing BayesPilot: from model training to deployment decisions</h1>
+          <p class="muted">
+            Why this matters: reliable model selection requires linking experiments, evaluation, and rollout decisions in one clear workflow.
+          </p>
+          <small><time datetime="2026-03-25">March 25, 2026</time></small>
+        </header>
+
+        <section>
+          <h2>Problem</h2>
+          <p>
+            Many ML projects stop at model metrics without clear decision logic for deployment. BayesPilot
+            addresses this gap by combining training artifacts, evaluation results, and deployment criteria.
+          </p>
+        </section>
+
+        <section>
+          <h2>Approach</h2>
+          <p>
+            The system tracks model runs, compares performance and uncertainty, and surfaces decision-ready
+            summaries for selecting candidates to promote.
+          </p>
+        </section>
+
+        <section>
+          <h2>Result</h2>
+          <p>
+            This structure improves reproducibility and makes deployment decisions easier to audit and repeat
+            across iterations.
+          </p>
+        </section>
+
+        <section>
+          <h2>Project Link</h2>
+          <p>
+            <a href="https://github.com/dahlp94/bayespilot" target="_blank" rel="noopener noreferrer"
+              >BayesPilot repository</a
+            >
+          </p>
+        </section>
+      </article>
+
+      <footer class="site-footer">
+        <small>© <span id="y"></span> Pratik Dahal</small>
+      </footer>
+    </main>
+
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
