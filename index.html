@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta
       name="description"
-      content="Pratik Dahal — statistics graduate student focused on ML systems, variational inference, graph-based learning, and recommender systems."
+      content="Pratik Dahal — statistics graduate student. ML systems, probabilistic modeling, retrieval infra, spatial statistics research (SDM-CAR)."
     />
     <title>Pratik Dahal</title>
 
@@ -34,9 +34,9 @@
         outline: none;
       }
 
-      nav { margin-top: 1rem; }
+      nav { margin-top: 0.75rem; }
 
-      header.hero { padding: 2.5rem 0 1.5rem; }
+      header.hero { padding: 2rem 0 1.5rem; }
       .muted { opacity: .75; }
 
       .cta { display: flex; gap: .75rem; flex-wrap: wrap; margin-top: 1rem; }
@@ -55,9 +55,27 @@
 
       footer.site-footer { padding: 2rem 0; opacity: .7; }
 
-      /* Avatar-only brand */
-      .brand a { display: flex; align-items: center; text-decoration: none; }
-      .brand img { border-radius: 999px; object-fit: cover; width: 72px; height: 72px; }
+      section.writing > article + article {
+        margin-top: 1.25rem;
+        padding-top: 1.25rem;
+        border-top: 1px solid var(--pico-muted-border-color);
+      }
+      section.writing .read-all { margin-top: 1.25rem; }
+
+      .brand a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: inherit;
+      }
+      .brand img {
+        border-radius: 999px;
+        object-fit: cover;
+        width: 96px !important;
+        height: 96px !important;
+        max-width: none !important;
+        flex-shrink: 0;
+      }
     </style>
   </head>
 
@@ -67,13 +85,8 @@
     <nav class="container">
       <ul class="brand">
         <li>
-          <a href="#main" aria-label="Home">
-            <img
-              src="assets/avatar.png"
-              alt="Pratik Dahal"
-              width="72"
-              height="72"
-            />
+          <a href="#main" aria-label="Home — Pratik Dahal">
+            <img src="assets/avatar.png" alt="" />
           </a>
         </li>
       </ul>
@@ -88,38 +101,43 @@
     <main id="main" class="container">
       <header class="hero">
         <h1>Pratik Dahal</h1>
+        <p>
+          PhD candidate in statistics, building ML systems at the intersection of probabilistic inference, graph-structured models, and retrieval-backed applications.
+        </p>
         <p class="muted">
-          Statistics graduate student building end-to-end machine learning and AI systems, focusing on probabilistic modeling, graph-based learning, and retrieval-augmented generation.
+          Focus on variational inference, spatial models on graphs, and validation before production rollout.
         </p>
 
         <div class="cta">
-          <a href="#projects" role="button" class="secondary">See Projects</a>
+          <a href="#projects" role="button" class="secondary">Projects</a>
           <a href="https://github.com/dahlp94" role="button" class="secondary">GitHub</a>
-          <a href="mailto:mapratikdahal@gmail.com?subject=Resume%20request" role="button" class="secondary">Resume</a>
+          <a
+            href="mailto:mapratikdahal@gmail.com?subject=Resume%20request"
+            role="button"
+            class="secondary"
+            >Request résumé</a
+          >
         </div>
       </header>
 
       <section id="about">
         <h2>About</h2>
         <p>
-          I build end-to-end machine learning systems and research-oriented modeling tools, with an emphasis on
-          scalable inference, evaluation, and clean, reproducible code. Current interests include variational inference,
-          graph-based learning, recommender systems, and Bayesian spatial models.
+          I build models and the code around them: training pipelines, comparisons before deployment, and retrieval stacks where sources stay visible. Research centers on spatial and graph-structured priors when the neighborhood graph is imperfect.
         </p>
       </section>
 
       <section id="projects">
         <h2>Featured Projects</h2>
         <p class="muted">
-          Selected work in production ML systems, LLM infrastructure, and statistical modeling research.
+          ML rollout tooling, RAG infrastructure, and one spatial-statistics research line.
         </p>
 
         <div class="projects-grid">
           <article>
             <h3>BayesPilot</h3>
             <p>
-              Enables reproducible model comparison and deployment decisions with end-to-end tracking,
-              improving reliability of ML pipelines.
+              Track training runs and evaluations in one workflow. Model comparisons and rollout choices stay tied to the same metrics and artifacts.
             </p>
             <footer class="actions">
               <a
@@ -137,8 +155,7 @@
           <article>
             <h3>Vector RAG Backend</h3>
             <p>
-              Delivers low-latency semantic retrieval with citation-aware responses, enabling scalable
-              and grounded LLM applications.
+              Embeddings, vector search, and response wiring that keeps citations with model outputs. Tuned for production latency and operational debugging, not prototype demos.
             </p>
             <footer class="actions">
               <a
@@ -156,8 +173,7 @@
           <article>
             <h3>SDM-CAR</h3>
             <p>
-              Improves spatial prediction by learning graph spectral structure, reducing misspecification
-              error compared to classical CAR models.
+              <strong>Research.</strong> Spatial model in the CAR family with a learned spectral prior on the graph—less reliance on a fixed neighborhood matrix when the graph is imperfect. Variational and MCMC pieces for inference and prediction.
             </p>
             <footer class="actions">
               <a
@@ -174,10 +190,10 @@
         </div>
       </section>
 
-      <section id="writing">
+      <section id="writing" class="writing">
         <h2>Latest Writing</h2>
         <p class="muted">
-          Notes on machine learning systems, applied research, and engineering decisions.
+          Technical notes on each featured project: design rationale, tradeoffs, and follow-on work.
         </p>
         <article>
           <h3>
@@ -185,9 +201,8 @@
               >Designing BayesPilot: from model training to deployment decisions</a
             >
           </h3>
-          <p>
-            How I structured an end-to-end decision-support workflow for training, evaluation,
-            and model rollout in a production-oriented ML setting.
+          <p class="muted">
+            Workflow for training, evaluation, and rollout in a production-oriented ML setting.
           </p>
           <small><time datetime="2026-03-25">March 25, 2026</time></small>
         </article>
@@ -197,9 +212,8 @@
               >Building a production-style Vector RAG backend</a
             >
           </h3>
-          <p>
-            A practical blueprint for low-latency semantic retrieval, grounded responses, and
-            traceable citations in LLM-backed applications.
+          <p class="muted">
+            Retrieval paths, latency, citation-grounded responses.
           </p>
           <small><time datetime="2026-03-24">March 24, 2026</time></small>
         </article>
@@ -209,13 +223,12 @@
               >SDM-CAR explained: spectral structure in spatial Bayesian modeling</a
             >
           </h3>
-          <p>
-            Why spectral graph structure improves robustness under misspecification, and how
-            variational inference plus MCMC support reliable spatial prediction.
+          <p class="muted">
+            Spectral priors, misspecification, VI and MCMC for spatial prediction.
           </p>
           <small><time datetime="2026-03-23">March 23, 2026</time></small>
         </article>
-        <p>
+        <p class="read-all">
           <a href="blog/" role="button" class="secondary">Read all posts</a>
         </p>
       </section>
