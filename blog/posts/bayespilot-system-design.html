@@ -26,34 +26,68 @@
     <main class="container">
       <article>
         <header>
-          <h1>Designing BayesPilot: from model training to deployment decisions</h1>
+          <h1>Designing BayesPilot: from model metrics to deployment decisions</h1>
           <p class="muted">
-            Why this matters: reliable model selection requires linking experiments, evaluation, and rollout decisions in one clear workflow.
+            BayesPilot treats model promotion as an explicit decision workflow, not just a leaderboard of scores.
           </p>
           <small><time datetime="2026-03-25">March 25, 2026</time></small>
         </header>
 
         <section>
-          <h2>Problem</h2>
+          <h2>Why this problem matters</h2>
           <p>
-            Many ML projects stop at model metrics without clear decision logic for deployment. BayesPilot
-            addresses this gap by combining training artifacts, evaluation results, and deployment criteria.
+            In many ML projects, the pipeline ends at validation metrics. But production rollout requires a
+            different question: <em>is this model safe and useful to operate under real constraints?</em> A model
+            can improve AUC while still failing calibration, creating unstable threshold behavior, or producing
+            decisions that are hard to justify later.
+          </p>
+          <p>
+            BayesPilot is designed around that gap between experiment success and deployment readiness.
           </p>
         </section>
 
         <section>
-          <h2>Approach</h2>
+          <h2>What BayesPilot is organizing</h2>
           <p>
-            The system tracks model runs, compares performance and uncertainty, and surfaces decision-ready
-            summaries for selecting candidates to promote.
+            BayesPilot links each stage of a production-style workflow into one traceable chain: training run
+            metadata (data slice, feature set, and model config), evaluation outputs, calibration artifacts,
+            operating-threshold selection, and final promotion decision.
+          </p>
+          <p>
+            Instead of keeping metrics as disconnected artifacts, the system records why a candidate was accepted
+            or rejected, including the baseline it was compared against and the go/no-go criteria applied at that
+            time.
           </p>
         </section>
 
         <section>
-          <h2>Result</h2>
+          <h2>Key design choices</h2>
           <p>
-            This structure improves reproducibility and makes deployment decisions easier to audit and repeat
-            across iterations.
+            <strong>Decision gates, not single scores.</strong> Promotion is blocked unless baseline comparison,
+            calibration quality, and threshold behavior all pass defined checks.
+          </p>
+          <p>
+            <strong>Calibration as a first-class step.</strong> BayesPilot separates ranking quality from
+            probability quality, so thresholds are selected from calibrated probabilities rather than raw model
+            confidence.
+          </p>
+          <p>
+            <strong>Traceability by default.</strong> Each promotion decision is tied to the exact run,
+            evaluation snapshot, and threshold policy used to make it, so later review and iteration are
+            reproducible.
+          </p>
+        </section>
+
+        <section>
+          <h2>Why this matters in practice</h2>
+          <p>
+            The practical value is not only better predictions; it is clearer operational decision-making. Teams
+            can revisit why a model was promoted, compare rollout logic across versions, and update thresholds
+            without losing the decision history behind earlier releases.
+          </p>
+          <p>
+            The result is a release process that is repeatable by default, auditable when needed, and easier to
+            improve over time.
           </p>
         </section>
 
