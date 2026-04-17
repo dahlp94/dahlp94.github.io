@@ -28,32 +28,87 @@
         <header>
           <h1>SDM-CAR explained: spectral structure in spatial Bayesian modeling</h1>
           <p class="muted">
-            Why this matters: modeling graph spectral structure can reduce misspecification error and improve spatial prediction.
+            Why this matters: when spatial structure is learned rather than fixed, uncertainty is better calibrated and prediction is more robust.
           </p>
           <small><time datetime="2026-03-23">March 23, 2026</time></small>
         </header>
 
         <section>
-          <h2>Problem</h2>
+          <h2>Why classical spatial models fail under misspecification</h2>
           <p>
-            Classical CAR models can underperform when spatial dependencies do not match their
-            assumptions, causing bias and weaker predictive performance under misspecification.
+            A standard CAR model encodes spatial dependence through a fixed neighborhood matrix:
+            who is connected to whom, and with what strength. That is convenient, but it quietly
+            assumes the chosen graph structure is correct.
+          </p>
+          <p>
+            In practice, that assumption is often wrong. Real spatial dependence can be
+            multi-scale, anisotropic, or partially nonlocal. If the imposed structure is too
+            rigid, the model can oversmooth sharp local effects, distort uncertainty, and produce
+            biased estimates. The issue is not that CAR is unusable; it is that fixed structure
+            turns model misspecification into a first-order error source.
           </p>
         </section>
 
         <section>
-          <h2>Approach</h2>
+          <h2>Intuition: what the graph spectrum represents</h2>
           <p>
-            SDM-CAR introduces spectral-density modulation over graph structure and uses collapsed
-            variational inference with MCMC diagnostics to capture richer spatial patterns.
+            Every spatial graph has a spectrum (the eigenvalues of a matrix such as its graph
+            Laplacian), and those spectral components act like spatial frequencies. Low-frequency
+            modes represent broad,
+            smooth regional trends; high-frequency modes capture sharper local variation and
+            boundaries.
+          </p>
+          <p>
+            Thinking spectrally separates two questions that are conflated in classical CAR:
+            <em>which graph was chosen</em> and <em>how much signal should live at each spatial
+            scale</em>. This perspective makes misspecification easier to diagnose and, more
+            importantly, easier to model.
           </p>
         </section>
 
         <section>
-          <h2>Result</h2>
+          <h2>The SDM-CAR idea</h2>
           <p>
-            The framework recovers complex graph spectral signals and improves robustness and
-            predictive performance compared with classical CAR baselines.
+            SDM-CAR (Spectral Density Modulated CAR) moves the prior into the graph spectral domain.
+            Instead of hard-coding one smoothing profile from a fixed precision template, it learns
+            a spectral density over eigenvalues. That density controls how strongly each spatial
+            frequency is expressed.
+          </p>
+          <p>
+            Concretely, this keeps the computational and interpretive advantages of graph-based
+            priors, while allowing the model to adapt between global smoothness and local structure
+            as the data demands. In practice, this is more flexible than classical CAR under
+            misspecification, without adding a heavy modeling stack at every layer.
+          </p>
+        </section>
+
+        <section>
+          <h2>Inference: variational speed with MCMC validation</h2>
+          <p>
+            Inference uses collapsed variational methods for scalability, paired with
+            targeted MCMC diagnostics to check posterior geometry and calibration. This is not
+            "VI instead of MCMC"; it is a deliberate hybrid: VI for tractable fitting at realistic
+            problem sizes, MCMC for robustness checks where approximation error matters.
+          </p>
+          <p>
+            That combination is central to the project: it signals both algorithmic practicality and
+            Bayesian discipline.
+          </p>
+        </section>
+
+        <section>
+          <h2>Why this matters in practice</h2>
+          <p>
+            If your spatial structure is slightly wrong, classical models can look stable while being
+            systematically off. SDM-CAR is designed for that regime. Classical CAR implicitly fixes
+            spectral allocation through its chosen neighborhood structure; SDM-CAR learns spectral
+            allocation from data. By learning spectral allocation
+            rather than freezing it, the model better tracks heterogeneous spatial effects and yields
+            more credible uncertainty under structural ambiguity.
+          </p>
+          <p>
+            The practical contribution is not just better fit on one dataset, but a modeling strategy
+            that stays reliable when the graph you start with is only an approximation.
           </p>
         </section>
 
