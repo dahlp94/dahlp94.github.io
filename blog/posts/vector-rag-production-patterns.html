@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta
       name="description"
-      content="Building a production-style Vector RAG backend with FastAPI, Supabase, and modern LLM APIs."
+      content="Designing a production-oriented Vector RAG backend: retrieval quality, latency control, and citation-based traceability."
     />
-    <title>Vector RAG Backend | Pratik Dahal</title>
+    <title>Designing a Vector RAG Backend | Pratik Dahal</title>
     <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css" />
     <link rel="stylesheet" href="../../styles.css" />
     <meta name="color-scheme" content="light dark" />
@@ -26,34 +26,74 @@
     <main class="container">
       <article>
         <header>
-          <h1>Building a production-style Vector RAG backend</h1>
+          <h1>Designing a Vector RAG backend for production constraints</h1>
           <p class="muted">
-            Why this matters: useful LLM systems need fast retrieval, grounded outputs, and clear traceability to source content.
+            Useful RAG systems are not just fluent; they need reliable retrieval, bounded latency, and inspectable answers.
           </p>
           <small><time datetime="2026-03-24">March 24, 2026</time></small>
         </header>
 
         <section>
-          <h2>Problem</h2>
+          <h2>Why RAG systems fail in practice</h2>
           <p>
-            RAG prototypes often work in demos but fail under real usage due to latency, weak
-            retrieval quality, and poor observability of where answers come from.
+            Most RAG demos look good because they are tested on clean prompts and familiar
+            documents. In production, failure shows up quickly: retrieval returns near-matches that
+            are not actually useful, chunking breaks context boundaries, and end-to-end latency grows
+            once retrieval and generation are chained under load.
+          </p>
+          <p>
+            The bigger issue is trust. If a response cannot point to exact source chunks, debugging
+            and review become guesswork. A system that sounds correct but cannot be inspected is hard
+            to operate safely.
           </p>
         </section>
 
         <section>
-          <h2>Approach</h2>
+          <h2>What this backend is designed to handle</h2>
           <p>
-            I built a FastAPI service with Supabase-backed vector search and integrated modern
-            LLM APIs, with retrieval and response flows designed for grounded, citation-aware output.
+            This backend is structured around predictable retrieval behavior instead of prompt-only
+            generation. FastAPI exposes retrieval and answer endpoints, Supabase stores embeddings in
+            Postgres with <code>pgvector</code> similarity search, and the response path returns grounded
+            answers with source citations.
+          </p>
+          <p>
+            The goal is not only answer generation; it is producing outputs that can be traced,
+            evaluated, and improved over time.
           </p>
         </section>
 
         <section>
-          <h2>Result</h2>
+          <h2>Key design choices</h2>
           <p>
-            The backend supports low-latency semantic retrieval and improves answer relevance while
-            preserving source traceability for production-style LLM applications.
+            <strong>Structured chunking over naive splitting.</strong> Chunks are created with stable
+            boundaries and metadata so retrieval units stay semantically meaningful and citation-ready.
+          </p>
+          <p>
+            <strong>Vector retrieval tuned for relevance.</strong> <code>pgvector</code> executes
+            nearest-neighbor search over embedded chunks, and top matches are passed directly into the
+            prompt as bounded context rather than relying on model memory.
+          </p>
+          <p>
+            <strong>Latency managed at the service layer.</strong> FastAPI keeps retrieval and
+            generation as explicit steps in one request path, so time spent in embedding lookup, vector
+            search, and LLM completion can be measured separately and tuned against a response budget.
+          </p>
+          <p>
+            <strong>Traceability as a product requirement.</strong> Responses include source citations,
+            making it possible to inspect where claims came from and evaluate failure cases directly.
+          </p>
+        </section>
+
+        <section>
+          <h2>Why this matters in production</h2>
+          <p>
+            In production, quality is a systems property, not a single model property. Retrieval
+            quality, chunk design, latency budgets, and citation visibility all influence whether users
+            trust the output.
+          </p>
+          <p>
+            Designing around these constraints makes the system easier to debug, easier to evaluate, and
+            more reliable under real usage than demo-first RAG pipelines.
           </p>
         </section>
 
