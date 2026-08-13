@@ -12,6 +12,15 @@ header.hero {
   padding: 1.75rem 0 1.5rem;
 }
 
+.hero h1 {
+  margin-bottom: 0.35rem;
+}
+
+.hero .role {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
 main.container > section,
 article > section {
   padding-top: 1.5rem;
@@ -28,12 +37,18 @@ footer.site-footer {
 }
 
 article h3 {
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.4rem;
 }
 
-article p {
-  margin-bottom: 0.75rem;
+article p,
+#about p,
+#research p,
+#contact p {
   line-height: 1.6;
+}
+
+article p.problem {
+  margin-bottom: 0.75rem;
 }
 
 /* Components */
@@ -66,20 +81,51 @@ article p {
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
 }
 
+.projects-grid article {
+  display: flex;
+  flex-direction: column;
+}
+
+.capabilities {
+  margin: 0 0 0.85rem;
+  padding-left: 1.15rem;
+}
+
+.capabilities li {
+  margin-bottom: 0.45rem;
+  line-height: 1.5;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.9rem;
+}
+
+.tags li {
+  font-size: 0.75rem;
+  line-height: 1.3;
+  padding: 0.15rem 0.5rem;
+  border: 1px solid var(--pico-muted-border-color);
+  border-radius: 999px;
+  opacity: 0.85;
+}
+
 footer.actions {
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
+  margin-top: auto;
 }
 
-section.writing > article + article {
-  margin-top: 1.25rem;
-  padding-top: 1.25rem;
-  border-top: 1px solid var(--pico-muted-border-color);
-}
-
-section.writing .read-all {
-  margin-top: 1.25rem;
+.research-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
 }
 
 .brand a {

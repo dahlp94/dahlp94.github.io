@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta
       name="description"
-      content="Pratik Dahal — statistics graduate student. ML systems, probabilistic modeling, retrieval infra, spatial statistics research (SDM-CAR)."
+      content="Pratik Dahal — statistics PhD candidate and data scientist. Applied data science with Bayesian modeling, experimentation, and statistical machine learning."
     />
-    <title>Pratik Dahal</title>
+    <title>Pratik Dahal | Statistics PhD Candidate &amp; Data Scientist</title>
 
     <!-- Pico.css -->
     <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
@@ -29,7 +29,7 @@
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="blog/">Writing</a></li>
+        <li><a href="#research">Research</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -37,47 +37,59 @@
     <main id="main" class="container">
       <header class="hero">
         <h1>Pratik Dahal</h1>
-        <p>
-          PhD candidate in statistics, building ML systems at the intersection of probabilistic inference, graph-structured models, and retrieval-backed applications.
-        </p>
+        <p class="role">Statistics PhD Candidate | Data Scientist</p>
         <p class="muted">
-          Focus on variational inference, spatial models on graphs, and validation before production rollout.
+          I build statistically rigorous models and experiments, then turn them into Python/SQL systems that can be evaluated and used.
         </p>
 
         <div class="cta">
           <a href="#projects" role="button" class="secondary">Projects</a>
-          <a href="https://github.com/dahlp94" role="button" class="secondary">GitHub</a>
           <a
-            href="mailto:mapratikdahal@gmail.com?subject=Resume%20request"
+            href="https://github.com/dahlp94"
+            target="_blank"
+            rel="noopener noreferrer"
             role="button"
             class="secondary"
-            >Request résumé</a
+            >GitHub</a
           >
         </div>
       </header>
 
-      <section id="about">
-        <h2>About</h2>
-        <p>
-          I build models and the code around them: training pipelines, comparisons before deployment, and retrieval stacks where sources stay visible. Research centers on spatial and graph-structured priors when the neighborhood graph is imperfect.
-        </p>
-      </section>
-
       <section id="projects">
         <h2>Featured Projects</h2>
         <p class="muted">
-          ML rollout tooling, RAG infrastructure, and one spatial-statistics research line.
+          Bayesian modeling, incrementality experiments, spatial statistics research, and retrieval software.
         </p>
 
         <div class="projects-grid">
           <article>
-            <h3>BayesPilot</h3>
-            <p>
-              Track training runs and evaluations in one workflow. Model comparisons and rollout choices stay tied to the same metrics and artifacts.
+            <h3>BayesWatch</h3>
+            <p class="problem">
+              Most Arkansas county-year overdose counts in CDC WONDER are suppressed. Dropping those rows would remove entire counties from the analysis.
             </p>
+            <ul class="capabilities">
+              <li>
+                Suppression-aware Negative Binomial likelihood: 362 of 525 county-years are interval-censored, and all 75 counties remain in the model.
+              </li>
+              <li>
+                Pooled and hierarchical Bayesian models in PyMC, compared on a 2018–2023 train / 2024 temporal holdout. The pooled suppression-aware model is the selected serving model; the hierarchical model is the challenger.
+              </li>
+              <li>
+                PostgreSQL pipeline with MLflow tracking, FastAPI serving, and a Streamlit dashboard with optional API-grounded explanations.
+              </li>
+            </ul>
+            <ul class="tags" aria-label="Technologies">
+              <li>Python</li>
+              <li>PyMC</li>
+              <li>PostgreSQL</li>
+              <li>SQL</li>
+              <li>MLflow</li>
+              <li>FastAPI</li>
+              <li>Streamlit</li>
+            </ul>
             <footer class="actions">
               <a
-                href="https://github.com/dahlp94/bayespilot"
+                href="https://github.com/dahlp94/bayeswatch"
                 target="_blank"
                 rel="noopener noreferrer"
                 role="button"
@@ -89,13 +101,31 @@
           </article>
 
           <article>
-            <h3>Vector RAG Backend</h3>
-            <p>
-              Embeddings, vector search, and response wiring that keeps citations with model outputs. Tuned for production latency and operational debugging, not prototype demos.
+            <h3>Retail Media Incrementality Platform</h3>
+            <p class="problem">
+              In a synthetic retail-media setting, attributed ROAS can credit campaigns for purchases that would have happened anyway. Budget decisions need a randomized holdout, not attribution alone.
             </p>
+            <ul class="capabilities">
+              <li>
+                Randomized ~80/20 treatment/control experiments, with conversion lift, incremental orders, and incremental revenue reported alongside attributed performance.
+              </li>
+              <li>
+                Analytic Wald intervals for conversion lift, and member-level stratified bootstrap intervals with 1,000 replicates for order and revenue effects.
+              </li>
+              <li>
+                SQL analytical marts and rule-based budget recommendations from campaign-level incremental results.
+              </li>
+            </ul>
+            <ul class="tags" aria-label="Technologies">
+              <li>Python</li>
+              <li>SQL</li>
+              <li>PostgreSQL</li>
+              <li>Experimentation</li>
+              <li>Bootstrap</li>
+            </ul>
             <footer class="actions">
               <a
-                href="https://github.com/dahlp94/vector-rag"
+                href="https://github.com/dahlp94/retail-media-platform"
                 target="_blank"
                 rel="noopener noreferrer"
                 role="button"
@@ -108,12 +138,68 @@
 
           <article>
             <h3>SDM-CAR</h3>
-            <p>
-              <strong>Research.</strong> Spatial model in the CAR family with a learned spectral prior on the graph—less reliance on a fixed neighborhood matrix when the graph is imperfect. Variational and MCMC pieces for inference and prediction.
+            <p class="problem">
+              Classical CAR models fix spatial dependence in a neighborhood matrix. If that graph is wrong, both the fit and the uncertainty can be misleading.
             </p>
+            <ul class="capabilities">
+              <li>
+                Spectral filters on the graph Laplacian that recover classical CAR and allow more flexible spatial spectra.
+              </li>
+              <li>
+                Collapsed variational inference and collapsed MCMC under the same model interface.
+              </li>
+              <li>
+                Experiments on misspecification and prediction when observations are missing in blocks.
+              </li>
+            </ul>
+            <ul class="tags" aria-label="Technologies">
+              <li>Python</li>
+              <li>Bayesian spatial stats</li>
+              <li>CAR</li>
+              <li>Variational inference</li>
+              <li>MCMC</li>
+            </ul>
             <footer class="actions">
               <a
                 href="https://github.com/dahlp94/sdm-car"
+                target="_blank"
+                rel="noopener noreferrer"
+                role="button"
+                class="secondary"
+              >
+                Code
+              </a>
+              <a href="blog/posts/sdm-car-spectral-modeling.html" role="button" class="secondary">
+                Note
+              </a>
+            </footer>
+          </article>
+
+          <article>
+            <h3>Vectra</h3>
+            <p class="problem">
+              Internal <code>.md</code> and <code>.txt</code> files are hard to search by meaning, and generated answers need to show which chunks they used.
+            </p>
+            <ul class="capabilities">
+              <li>
+                Ingest markdown/text, chunk documents, and store dense embeddings in PostgreSQL with pgvector.
+              </li>
+              <li>
+                Metadata-filtered similarity search over the index.
+              </li>
+              <li>
+                FastAPI RAG that returns an answer, citations, and chunk snippets, or a fallback when retrieval is too weak.
+              </li>
+            </ul>
+            <ul class="tags" aria-label="Technologies">
+              <li>Python</li>
+              <li>FastAPI</li>
+              <li>PostgreSQL</li>
+              <li>pgvector</li>
+            </ul>
+            <footer class="actions">
+              <a
+                href="https://github.com/dahlp94/vectra"
                 target="_blank"
                 rel="noopener noreferrer"
                 role="button"
@@ -126,53 +212,48 @@
         </div>
       </section>
 
-      <section id="writing" class="writing">
-        <h2>Latest Writing</h2>
-        <p class="muted">
-          Technical notes on each featured project: design rationale, tradeoffs, and follow-on work.
+      <section id="about">
+        <h2>About</h2>
+        <p>
+          I am a PhD candidate in statistics focused on applied data science and statistical machine learning. I work mainly with Python and SQL, with an emphasis on Bayesian modeling, experimentation, uncertainty quantification, and reproducible analysis.
         </p>
-        <article>
-          <h3>
-            <a href="blog/posts/bayespilot-system-design.html"
-              >Designing BayesPilot: from model training to deployment decisions</a
-            >
-          </h3>
-          <p class="muted">
-            Workflow for training, evaluation, and rollout in a production-oriented ML setting.
-          </p>
-          <small><time datetime="2026-03-25">March 25, 2026</time></small>
-        </article>
-        <article>
-          <h3>
-            <a href="blog/posts/vector-rag-production-patterns.html"
-              >Building a production-style Vector RAG backend</a
-            >
-          </h3>
-          <p class="muted">
-            Retrieval paths, latency, citation-grounded responses.
-          </p>
-          <small><time datetime="2026-03-24">March 24, 2026</time></small>
-        </article>
-        <article>
-          <h3>
-            <a href="blog/posts/sdm-car-spectral-modeling.html"
-              >SDM-CAR explained: spectral structure in spatial Bayesian modeling</a
-            >
-          </h3>
-          <p class="muted">
-            Spectral priors, misspecification, VI and MCMC for spatial prediction.
-          </p>
-          <small><time datetime="2026-03-23">March 23, 2026</time></small>
-        </article>
-        <p class="read-all">
-          <a href="blog/" role="button" class="secondary">Read all posts</a>
+        <p>
+          I enjoy turning complex, ambiguous problems into clear statistical questions, evaluating solutions carefully, and building practical tools around the results.
+        </p>
+      </section>
+
+      <section id="research">
+        <h2>Research</h2>
+        <p>
+          My research is in Bayesian computation for structured models: spatial dependence on graphs, variational inference, and MCMC when an approximation needs a check. SDM-CAR is the main example. It puts CAR-type covariance in the graph spectral domain, fits the same filters with collapsed VI or MCMC, and compares them under misspecification and block-missing prediction. The through-line is uncertainty that remains usable when the neighborhood graph, or the observation process, is only partly known.
+        </p>
+        <p class="research-links">
+          <a
+            href="https://github.com/dahlp94/sdm-car"
+            target="_blank"
+            rel="noopener noreferrer"
+            >SDM-CAR code</a
+          >
+          <span aria-hidden="true">·</span>
+          <a href="blog/posts/sdm-car-spectral-modeling.html">Technical note</a>
         </p>
       </section>
 
       <section id="contact">
         <h2>Contact</h2>
+        <p>For data science opportunities, research collaborations, or questions about my work:</p>
         <p>
-          Email: <a href="mailto:mapratikdahal@gmail.com">mapratikdahal@gmail.com</a>
+          Email:
+          <a href="mailto:mapratikdahal@gmail.com">mapratikdahal@gmail.com</a>
+        </p>
+        <p>
+          GitHub:
+          <a
+            href="https://github.com/dahlp94"
+            target="_blank"
+            rel="noopener noreferrer"
+            >github.com/dahlp94</a
+          >
         </p>
       </section>
 
