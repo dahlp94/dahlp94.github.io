@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Principles of Statistics taught by Pratik Dahal at the University of Arkansas."
+    />
+    <title>Principles of Statistics | Pratik Dahal</title>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css" />
+    <link rel="stylesheet" href="/styles.css" />
+    <meta name="color-scheme" content="light dark" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <nav class="container">
+      <ul class="brand">
+        <li>
+          <a href="/" aria-label="Home — Pratik Dahal">
+            <img src="/assets/avatar.png" alt="" />
+          </a>
+        </li>
+      </ul>
+      <ul>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/research/">Research</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a href="/teaching/" aria-current="page">Teaching</a></li>
+        <li><a href="/blog/">Writing</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main id="main" class="container">
+      <header>
+        <p class="back-link">
+          <a href="/teaching/">← Teaching</a>
+        </p>
+        <h1>Principles of Statistics</h1>
+        <p class="muted">University of Arkansas</p>
+      </header>
+
+      <section>
+        <h2>Course Overview</h2>
+        <p>
+          Principles of Statistics is a problem-oriented course that introduces statistical reasoning through applications from a range of fields. The course emphasizes probability, statistical patterns, and the use of statistical analysis to make decisions when outcomes are uncertain.
+        </p>
+        <p class="section-link">
+          <a
+            href="https://catalog.uark.edu/undergraduatecatalog/coursesofinstruction/math/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >University of Arkansas course catalog →</a
+          >
+        </p>
+      </section>
+
+      <section>
+        <h2>Teaching Focus</h2>
+        <p>
+          In teaching this course, I emphasize the interpretation of statistical ideas alongside computation. Students should be able to explain what a result means, identify the assumptions behind an analysis, and connect a statistical procedure to the question being asked.
+        </p>
+        <ul class="capabilities">
+          <li>understanding data through descriptive summaries and visualization;</li>
+          <li>reasoning about probability and uncertainty;</li>
+          <li>interpreting confidence intervals and hypothesis tests;</li>
+          <li>understanding relationships between variables;</li>
+          <li>communicating statistical conclusions in context.</li>
+        </ul>
+      </section>
+
+      <footer class="site-footer">
+        <small>© <span id="y"></span> Pratik Dahal</small>
+      </footer>
+    </main>
+
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

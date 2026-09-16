@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta
       name="description"
-      content="Pratik Dahal — statistics PhD candidate and data scientist. Applied data science with Bayesian modeling, experimentation, and statistical machine learning."
+      content="Pratik Dahal is a Ph.D. candidate in Statistics at the University of Arkansas working across statistical research, applied data analysis, machine learning, and teaching."
     />
-    <title>Pratik Dahal | Statistics PhD Candidate &amp; Data Scientist</title>
+    <title>Pratik Dahal | Statistics Ph.D. Candidate</title>
 
     <!-- Pico.css -->
-    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css" />
+    <link rel="stylesheet" href="/styles.css" />
     <meta name="color-scheme" content="light dark" />
   </head>
 
@@ -21,99 +21,88 @@
     <nav class="container">
       <ul class="brand">
         <li>
-          <a href="#main" aria-label="Home — Pratik Dahal">
-            <img src="assets/avatar.png" alt="" />
+          <a href="/" aria-label="Home — Pratik Dahal">
+            <img src="/assets/avatar.png" alt="" />
           </a>
         </li>
       </ul>
       <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#research">Research</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/research/">Research</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a href="/teaching/">Teaching</a></li>
+        <li><a href="/blog/">Writing</a></li>
+        <li><a href="/#contact">Contact</a></li>
       </ul>
     </nav>
 
     <main id="main" class="container">
       <header class="hero">
         <h1>Pratik Dahal</h1>
-        <p class="role">Statistics PhD Candidate | Data Scientist</p>
+        <p class="role">Ph.D. Candidate in Statistics</p>
+        <p class="muted affiliation">University of Arkansas</p>
         <p class="muted">
-          I build statistically rigorous models and experiments, then turn them into Python/SQL systems that can be evaluated and used.
+          I work across statistical research, applied data analysis, machine learning, and teaching.
         </p>
 
         <div class="cta">
-          <a href="#projects" role="button" class="secondary">Projects</a>
-          <a
-            href="https://github.com/dahlp94"
-            target="_blank"
-            rel="noopener noreferrer"
-            role="button"
-            class="secondary"
-            >GitHub</a
-          >
+          <a href="/research/" role="button" class="secondary">Research</a>
+          <a href="/projects/" role="button" class="secondary">Projects</a>
+          <a href="/teaching/" role="button" class="secondary">Teaching</a>
         </div>
       </header>
 
       <section id="projects">
-        <h2>Featured Projects</h2>
+        <h2>Selected Projects</h2>
         <p class="muted">
-          Bayesian modeling, incrementality experiments, spatial statistics research, and retrieval software.
+          Selected applied work across analytics, experimentation, machine learning, and AI systems.
         </p>
 
         <div class="projects-grid">
           <article>
-            <h3>BayesWatch</h3>
+            <h3>Marketplace Operations Analytics</h3>
             <p class="problem">
-              Most Arkansas county-year overdose counts in CDC WONDER are suppressed. Dropping those rows would remove entire counties from the analysis.
+              Operational analytics on a multi-table e-commerce dataset, focused on reliable metrics, data quality, fulfillment performance, seller behavior, and decision-oriented reporting.
             </p>
             <ul class="capabilities">
               <li>
-                Suppression-aware Negative Binomial likelihood: 362 of 525 county-years are interval-censored, and all 75 counties remain in the model.
+                Integrated relational marketplace data using Python, SQL, and PostgreSQL.
               </li>
               <li>
-                Pooled and hierarchical Bayesian models in PyMC, compared on a 2018–2023 train / 2024 temporal holdout. The pooled suppression-aware model is the selected serving model; the hierarchical model is the challenger.
+                Validated joins, referential integrity, metric coverage, and data quality before analysis.
               </li>
               <li>
-                PostgreSQL pipeline with MLflow tracking, FastAPI serving, and a Streamlit dashboard with optional API-grounded explanations.
+                Analyzed fulfillment, seller, category, and geographic performance.
+              </li>
+              <li>
+                Developed operational KPIs and dashboard-ready datasets.
               </li>
             </ul>
             <ul class="tags" aria-label="Technologies">
               <li>Python</li>
-              <li>PyMC</li>
-              <li>PostgreSQL</li>
               <li>SQL</li>
-              <li>MLflow</li>
-              <li>FastAPI</li>
-              <li>Streamlit</li>
+              <li>PostgreSQL</li>
+              <li>Tableau</li>
             </ul>
-            <footer class="actions">
-              <a
-                href="https://github.com/dahlp94/bayeswatch"
-                target="_blank"
-                rel="noopener noreferrer"
-                role="button"
-                class="secondary"
-              >
-                Code
-              </a>
-            </footer>
           </article>
 
           <article>
-            <h3>Retail Media Incrementality Platform</h3>
+            <h3>Retail Media Measurement &amp; Decision Platform</h3>
             <p class="problem">
-              In a synthetic retail-media setting, attributed ROAS can credit campaigns for purchases that would have happened anyway. Budget decisions need a randomized holdout, not attribution alone.
+              Experimentation and measurement on synthetic retail-media data, designed to distinguish attributed performance from true incremental impact using randomized treatment and control groups.
             </p>
             <ul class="capabilities">
               <li>
-                Randomized ~80/20 treatment/control experiments, with conversion lift, incremental orders, and incremental revenue reported alongside attributed performance.
+                Measured incremental conversion, orders, and revenue using randomized holdouts.
               </li>
               <li>
-                Analytic Wald intervals for conversion lift, and member-level stratified bootstrap intervals with 1,000 replicates for order and revenue effects.
+                Estimated uncertainty using confidence intervals and bootstrap methods.
               </li>
               <li>
-                SQL analytical marts and rule-based budget recommendations from campaign-level incremental results.
+                Built campaign- and segment-level analytical datasets.
+              </li>
+              <li>
+                Used Python, SQL, and PostgreSQL to support reproducible measurement.
               </li>
             </ul>
             <ul class="tags" aria-label="Technologies">
@@ -121,7 +110,6 @@
               <li>SQL</li>
               <li>PostgreSQL</li>
               <li>Experimentation</li>
-              <li>Bootstrap</li>
             </ul>
             <footer class="actions">
               <a
@@ -137,58 +125,22 @@
           </article>
 
           <article>
-            <h3>SDM-CAR</h3>
+            <h3>Vector RAG Backend</h3>
             <p class="problem">
-              Classical CAR models fix spatial dependence in a neighborhood matrix. If that graph is wrong, both the fit and the uncertainty can be misleading.
+              Retrieval-augmented generation backend for retrieving relevant source material and returning grounded responses with citations.
             </p>
             <ul class="capabilities">
               <li>
-                Spectral filters on the graph Laplacian that recover classical CAR and allow more flexible spatial spectra.
+                Built document ingestion and vector retrieval workflows.
               </li>
               <li>
-                Collapsed variational inference and collapsed MCMC under the same model interface.
+                Used PostgreSQL and pgvector for retrieval infrastructure.
               </li>
               <li>
-                Experiments on misspecification and prediction when observations are missing in blocks.
-              </li>
-            </ul>
-            <ul class="tags" aria-label="Technologies">
-              <li>Python</li>
-              <li>Bayesian spatial stats</li>
-              <li>CAR</li>
-              <li>Variational inference</li>
-              <li>MCMC</li>
-            </ul>
-            <footer class="actions">
-              <a
-                href="https://github.com/dahlp94/sdm-car"
-                target="_blank"
-                rel="noopener noreferrer"
-                role="button"
-                class="secondary"
-              >
-                Code
-              </a>
-              <a href="blog/posts/sdm-car-spectral-modeling.html" role="button" class="secondary">
-                Note
-              </a>
-            </footer>
-          </article>
-
-          <article>
-            <h3>Vectra</h3>
-            <p class="problem">
-              Internal <code>.md</code> and <code>.txt</code> files are hard to search by meaning, and generated answers need to show which chunks they used.
-            </p>
-            <ul class="capabilities">
-              <li>
-                Ingest markdown/text, chunk documents, and store dense embeddings in PostgreSQL with pgvector.
+                Exposed retrieval and generation through FastAPI.
               </li>
               <li>
-                Metadata-filtered similarity search over the index.
-              </li>
-              <li>
-                FastAPI RAG that returns an answer, citations, and chunk snippets, or a fallback when retrieval is too weak.
+                Emphasized source grounding, citations, and evaluation.
               </li>
             </ul>
             <ul class="tags" aria-label="Technologies">
@@ -196,10 +148,11 @@
               <li>FastAPI</li>
               <li>PostgreSQL</li>
               <li>pgvector</li>
+              <li>RAG</li>
             </ul>
             <footer class="actions">
               <a
-                href="https://github.com/dahlp94/vectra"
+                href="https://github.com/dahlp94/vector-rag"
                 target="_blank"
                 rel="noopener noreferrer"
                 role="button"
@@ -207,18 +160,27 @@
               >
                 Code
               </a>
+              <a href="/blog/posts/vector-rag-production-patterns.html" role="button" class="secondary">
+                Note
+              </a>
             </footer>
           </article>
         </div>
+        <p class="section-link">
+          <a href="/projects/">Explore all projects →</a>
+        </p>
       </section>
 
       <section id="about">
         <h2>About</h2>
         <p>
-          I am a PhD candidate in statistics focused on applied data science and statistical machine learning. I work mainly with Python and SQL, with an emphasis on Bayesian modeling, experimentation, uncertainty quantification, and reproducible analysis.
+          I am a Ph.D. candidate in Statistics at the University of Arkansas. My work spans statistical methodology, applied data analysis, machine learning, and undergraduate teaching.
         </p>
         <p>
-          I enjoy turning complex, ambiguous problems into clear statistical questions, evaluating solutions carefully, and building practical tools around the results.
+          My doctoral research focuses on statistical models for structured data, while my applied projects explore how statistical and computational methods can be used to investigate practical problems in areas such as marketplace operations, experimentation, search, and AI systems.
+        </p>
+        <p>
+          Alongside my research and project work, I have taught undergraduate mathematics and statistics, including Principles of Statistics and College Algebra.
         </p>
       </section>
 
@@ -235,13 +197,36 @@
             >SDM-CAR code</a
           >
           <span aria-hidden="true">·</span>
-          <a href="blog/posts/sdm-car-spectral-modeling.html">Technical note</a>
+          <a href="/blog/posts/sdm-car-spectral-modeling.html">Technical note</a>
+        </p>
+        <p class="section-link">
+          <a href="/research/">Explore Research →</a>
+        </p>
+      </section>
+
+      <section id="teaching">
+        <h2>Teaching</h2>
+        <p>
+          I have taught undergraduate mathematics and statistics at the University of Arkansas.
+        </p>
+        <ul>
+          <li><a href="/teaching/principles-of-statistics/">Principles of Statistics</a></li>
+          <li><a href="/teaching/college-algebra/">College Algebra</a></li>
+        </ul>
+        <p class="section-link">
+          <a href="/teaching/">Explore Teaching →</a>
+        </p>
+      </section>
+
+      <section id="writing">
+        <p class="section-link">
+          <a href="/blog/">Explore Writing →</a>
         </p>
       </section>
 
       <section id="contact">
         <h2>Contact</h2>
-        <p>For data science opportunities, research collaborations, or questions about my work:</p>
+        <p>For questions about my work, research, teaching, or professional collaborations, feel free to get in touch.</p>
         <p>
           Email:
           <a href="mailto:mapratikdahal@gmail.com">mapratikdahal@gmail.com</a>

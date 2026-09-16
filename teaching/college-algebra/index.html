@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="College Algebra taught by Pratik Dahal at the University of Arkansas."
+    />
+    <title>College Algebra | Pratik Dahal</title>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css" />
+    <link rel="stylesheet" href="/styles.css" />
+    <meta name="color-scheme" content="light dark" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <nav class="container">
+      <ul class="brand">
+        <li>
+          <a href="/" aria-label="Home — Pratik Dahal">
+            <img src="/assets/avatar.png" alt="" />
+          </a>
+        </li>
+      </ul>
+      <ul>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/research/">Research</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a href="/teaching/" aria-current="page">Teaching</a></li>
+        <li><a href="/blog/">Writing</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main id="main" class="container">
+      <header>
+        <p class="back-link">
+          <a href="/teaching/">← Teaching</a>
+        </p>
+        <h1>College Algebra</h1>
+        <p class="muted">University of Arkansas</p>
+      </header>
+
+      <section>
+        <h2>Course Overview</h2>
+        <p>
+          College Algebra develops foundational algebraic skills through equations and inequalities, functions and graphs, systems of equations, and related mathematical structures.
+        </p>
+        <p class="section-link">
+          <a
+            href="https://catalog.uark.edu/undergraduatecatalog/coursesofinstruction/math/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >University of Arkansas course catalog →</a
+          >
+        </p>
+      </section>
+
+      <section>
+        <h2>Teaching Focus</h2>
+        <p>
+          In teaching College Algebra, I emphasize understanding relationships between algebraic expressions, equations, functions, and graphs rather than treating them as isolated procedures. The goal is for students to understand both how to carry out a method and how to recognize when it applies.
+        </p>
+        <ul class="capabilities">
+          <li>solving and interpreting equations and inequalities;</li>
+          <li>working with functions and their representations;</li>
+          <li>connecting algebraic and graphical reasoning;</li>
+          <li>solving systems of equations;</li>
+          <li>developing algebraic reasoning needed for later quantitative coursework.</li>
+        </ul>
+      </section>
+
+      <footer class="site-footer">
+        <small>© <span id="y"></span> Pratik Dahal</small>
+      </footer>
+    </main>
+
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

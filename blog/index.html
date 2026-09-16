@@ -5,71 +5,76 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta
       name="description"
-      content="Technical writing by Pratik Dahal on ML systems design, retrieval infrastructure, and spatial Bayesian modeling."
+      content="Technical notes by Pratik Dahal on statistical modeling, machine learning systems, retrieval, and related research and project work."
     />
     <title>Writing | Pratik Dahal</title>
     <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css" />
-    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="/styles.css" />
     <meta name="color-scheme" content="light dark" />
   </head>
   <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
     <nav class="container">
-      <ul>
-        <li><strong><a href="../">Pratik Dahal</a></strong></li>
+      <ul class="brand">
+        <li>
+          <a href="/" aria-label="Home — Pratik Dahal">
+            <img src="/assets/avatar.png" alt="" />
+          </a>
+        </li>
       </ul>
       <ul>
-        <li><a href="../">Home</a></li>
-        <li><a href="../#projects">Projects</a></li>
-        <li><a href="./" aria-current="page">Writing</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/research/">Research</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a href="/teaching/">Teaching</a></li>
+        <li><a href="/blog/" aria-current="page">Writing</a></li>
+        <li><a href="/#contact">Contact</a></li>
       </ul>
     </nav>
 
-    <main class="container">
+    <main id="main" class="container">
       <header>
         <h1>Writing</h1>
         <p class="muted">
-          Selected technical writing on ML system design, retrieval infrastructure, and Bayesian
-          modeling. Each piece focuses on implementation choices, trade-offs, and failure modes.
+          Technical notes on statistical modeling, machine learning systems, retrieval, and other work behind my projects and research.
         </p>
       </header>
 
       <section class="writing">
         <article>
           <h2>
-            <a href="posts/bayespilot-system-design.html"
+            <a href="/blog/posts/bayespilot-system-design.html"
               >Designing BayesPilot: from model training to deployment decisions</a
             >
           </h2>
+          <p class="muted writing-topic">Machine Learning Systems</p>
           <p>
-            A system design walkthrough of BayesPilot as a production-style ML decision-support
-            system, covering data contracts, training and calibration, deployment, and governance
-            checks for reliable model updates.
+            A note on how BayesPilot organizes model training, evaluation, and deployment decisions.
           </p>
           <small><time datetime="2026-03-25">March 25, 2026</time></small>
         </article>
         <article>
           <h2>
-            <a href="posts/vector-rag-production-patterns.html"
+            <a href="/blog/posts/vector-rag-production-patterns.html"
               >Building a production-style Vector RAG backend</a
             >
           </h2>
+          <p class="muted writing-topic">AI / Retrieval</p>
           <p>
-            A production-oriented retrieval architecture for RAG applications, focused on index
-            design, latency-recall trade-offs, citation traceability, and operational patterns for
-            evaluation and monitoring.
+            A note on retrieval architecture, citations, and backend design for a Vector RAG system.
           </p>
           <small><time datetime="2026-03-24">March 24, 2026</time></small>
         </article>
         <article>
           <h2>
-            <a href="posts/sdm-car-spectral-modeling.html"
+            <a href="/blog/posts/sdm-car-spectral-modeling.html"
               >SDM-CAR explained: spectral structure in spatial Bayesian modeling</a
             >
           </h2>
+          <p class="muted writing-topic">Statistical Research</p>
           <p>
-            A research-focused analysis of SDM-CAR for spatial Bayesian modeling, showing how spectral
-            parameterization improves robustness under misspecification, and how variational
-            inference with MCMC supports uncertainty-aware prediction.
+            A technical introduction to the SDM-CAR modeling idea and its spectral approach to spatial dependence.
           </p>
           <small><time datetime="2026-03-23">March 23, 2026</time></small>
         </article>

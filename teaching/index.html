@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Teaching by Pratik Dahal, including Principles of Statistics and College Algebra at the University of Arkansas."
+    />
+    <title>Teaching | Pratik Dahal</title>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css" />
+    <link rel="stylesheet" href="/styles.css" />
+    <meta name="color-scheme" content="light dark" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <nav class="container">
+      <ul class="brand">
+        <li>
+          <a href="/" aria-label="Home — Pratik Dahal">
+            <img src="/assets/avatar.png" alt="" />
+          </a>
+        </li>
+      </ul>
+      <ul>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/research/">Research</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a href="/teaching/" aria-current="page">Teaching</a></li>
+        <li><a href="/blog/">Writing</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main id="main" class="container">
+      <header>
+        <h1>Teaching</h1>
+        <p>
+          I have taught undergraduate mathematics and statistics at the University of Arkansas. My teaching emphasizes understanding the reasoning behind a method, interpreting results carefully, and connecting mathematical and statistical ideas to the problems they are intended to solve.
+        </p>
+      </header>
+
+      <section>
+        <h2>Courses Taught</h2>
+        <div class="projects-grid">
+          <article>
+            <h3>Principles of Statistics</h3>
+            <p class="muted">University of Arkansas</p>
+            <p class="problem">
+              A problem-oriented statistics course centered on using statistical reasoning to understand data and make decisions under uncertainty.
+            </p>
+            <footer class="actions">
+              <a href="/teaching/principles-of-statistics/">View course →</a>
+            </footer>
+          </article>
+          <article>
+            <h3>College Algebra</h3>
+            <p class="muted">University of Arkansas</p>
+            <p class="problem">
+              An undergraduate algebra course covering equations, functions, graphs, systems of equations, and related mathematical foundations.
+            </p>
+            <footer class="actions">
+              <a href="/teaching/college-algebra/">View course →</a>
+            </footer>
+          </article>
+        </div>
+      </section>
+
+      <section id="philosophy">
+        <h2>Teaching Philosophy</h2>
+        <p>
+          My goal in teaching mathematics and statistics is to help students move beyond memorizing procedures and toward understanding why a method works, when it should be used, and what its result means.
+        </p>
+        <p>
+          I try to build that understanding by connecting formal ideas to concrete problems, making assumptions explicit, and encouraging students to explain their reasoning rather than focusing only on obtaining the final answer. In statistics especially, I want students to see computation as part of a larger process that includes asking a clear question, choosing an appropriate method, evaluating uncertainty, and interpreting the result in context.
+        </p>
+        <p>
+          I also recognize that students enter quantitative courses with different levels of preparation and confidence. I aim to make expectations clear, break difficult ideas into manageable steps, and create opportunities for students to ask questions and develop confidence through practice.
+        </p>
+      </section>
+
+      <footer class="site-footer">
+        <small>© <span id="y"></span> Pratik Dahal</small>
+      </footer>
+    </main>
+
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

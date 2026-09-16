@@ -9,23 +9,36 @@
     />
     <title>Designing a Vector RAG Backend | Pratik Dahal</title>
     <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css" />
-    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="/styles.css" />
     <meta name="color-scheme" content="light dark" />
   </head>
   <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
     <nav class="container">
-      <ul>
-        <li><strong><a href="../../">Pratik Dahal</a></strong></li>
+      <ul class="brand">
+        <li>
+          <a href="/" aria-label="Home — Pratik Dahal">
+            <img src="/assets/avatar.png" alt="" />
+          </a>
+        </li>
       </ul>
       <ul>
-        <li><a href="../../">Home</a></li>
-        <li><a href="../">Writing</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/research/">Research</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a href="/teaching/">Teaching</a></li>
+        <li><a href="/blog/" aria-current="page">Writing</a></li>
+        <li><a href="/#contact">Contact</a></li>
       </ul>
     </nav>
 
-    <main class="container">
+    <main id="main" class="container">
       <article>
         <header>
+          <p class="back-link">
+            <a href="/blog/">← Writing</a>
+          </p>
           <h1>Designing a Vector RAG backend for production constraints</h1>
           <p class="muted">
             Useful RAG systems are not just fluent; they need reliable retrieval, bounded latency, and inspectable answers.

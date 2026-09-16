@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Projects by Pratik Dahal in data analysis, statistical modeling, machine learning, experimentation, and applied AI."
+    />
+    <title>Projects | Pratik Dahal</title>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css" />
+    <link rel="stylesheet" href="/styles.css" />
+    <meta name="color-scheme" content="light dark" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <nav class="container">
+      <ul class="brand">
+        <li>
+          <a href="/" aria-label="Home — Pratik Dahal">
+            <img src="/assets/avatar.png" alt="" />
+          </a>
+        </li>
+      </ul>
+      <ul>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/research/">Research</a></li>
+        <li><a href="/projects/" aria-current="page">Projects</a></li>
+        <li><a href="/teaching/">Teaching</a></li>
+        <li><a href="/blog/">Writing</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main id="main" class="container">
+      <header>
+        <h1>Projects</h1>
+        <p>
+          Selected work in data analysis, statistical modeling, machine learning, experimentation, and applied AI.
+        </p>
+      </header>
+
+      <section>
+      <div class="projects-grid">
+        <article>
+          <h3>Marketplace Operations Analytics</h3>
+          <p class="problem">
+            Operational analytics on a multi-table e-commerce marketplace, focused on building trustworthy metrics and diagnosing fulfillment, seller, category, and geographic performance.
+          </p>
+          <ul class="capabilities">
+            <li>
+              Integrated relational marketplace data using Python, SQL, and PostgreSQL.
+            </li>
+            <li>
+              Validated referential integrity, join coverage, fan-out, missingness, and metric consistency before analysis.
+            </li>
+            <li>
+              Investigated fulfillment performance and operational differences across sellers, categories, and geographies.
+            </li>
+            <li>
+              Built reusable KPI datasets for operational analysis and Tableau reporting.
+            </li>
+          </ul>
+          <ul class="tags" aria-label="Technologies">
+            <li>Python</li>
+            <li>SQL</li>
+            <li>PostgreSQL</li>
+            <li>Tableau</li>
+          </ul>
+        </article>
+
+        <article>
+          <h3>Retail Media Measurement &amp; Decision Platform</h3>
+          <p class="problem">
+            Experimentation and measurement on synthetic retail-media data, built to separate attributed performance from causal incremental impact.
+          </p>
+          <ul class="capabilities">
+            <li>
+              Analyzed randomized treatment-control experiments to estimate incremental conversion, orders, and revenue.
+            </li>
+            <li>
+              Quantified uncertainty using confidence intervals and stratified bootstrap estimates.
+            </li>
+            <li>
+              Built campaign- and segment-level measurement datasets using consistent experiment-window definitions.
+            </li>
+            <li>
+              Developed reproducible Python and SQL workflows for campaign performance and incrementality analysis.
+            </li>
+          </ul>
+          <ul class="tags" aria-label="Technologies">
+            <li>Python</li>
+            <li>SQL</li>
+            <li>PostgreSQL</li>
+            <li>Experimentation</li>
+          </ul>
+          <footer class="actions">
+            <a
+              href="https://github.com/dahlp94/retail-media-platform"
+              target="_blank"
+              rel="noopener noreferrer"
+              role="button"
+              class="secondary"
+            >
+              Code
+            </a>
+          </footer>
+        </article>
+
+        <article>
+          <h3>Vector RAG Backend</h3>
+          <p class="problem">
+            Retrieval-augmented generation backend designed to retrieve relevant source material and produce grounded answers with traceable citations.
+          </p>
+          <ul class="capabilities">
+            <li>
+              Built document ingestion, chunking, embedding, and vector-retrieval workflows.
+            </li>
+            <li>
+              Implemented PostgreSQL and pgvector retrieval for semantically relevant source selection.
+            </li>
+            <li>
+              Exposed retrieval and generation workflows through a FastAPI service.
+            </li>
+            <li>
+              Evaluated retrieval behavior and designed responses around source grounding and citation traceability.
+            </li>
+          </ul>
+          <ul class="tags" aria-label="Technologies">
+            <li>Python</li>
+            <li>FastAPI</li>
+            <li>PostgreSQL</li>
+            <li>pgvector</li>
+            <li>RAG</li>
+          </ul>
+          <footer class="actions">
+            <a
+              href="https://github.com/dahlp94/vector-rag"
+              target="_blank"
+              rel="noopener noreferrer"
+              role="button"
+              class="secondary"
+            >
+              Code
+            </a>
+            <a href="/blog/posts/vector-rag-production-patterns.html" role="button" class="secondary">
+              Note
+            </a>
+          </footer>
+        </article>
+
+        <article>
+          <h3>Search &amp; Ranking Platform</h3>
+          <p class="problem">
+            Product-search relevance project comparing lexical retrieval, learning-to-rank, and semantic relevance approaches on query-level candidate sets.
+          </p>
+          <ul class="capabilities">
+            <li>
+              Established TF-IDF and BM25 baselines and evaluated rankings with NDCG@10, Recall@10, and MRR.
+            </li>
+            <li>
+              Built query-product relevance features covering lexical similarity, token coverage, brand matching, and length signals.
+            </li>
+            <li>
+              Trained an XGBoost learning-to-rank model with query-level grouping and strict query-based train/validation separation.
+            </li>
+            <li>
+              Extended the ranking pipeline with embedding-based semantic relevance features.
+            </li>
+          </ul>
+          <ul class="tags" aria-label="Technologies">
+            <li>Python</li>
+            <li>XGBoost</li>
+            <li>BM25</li>
+            <li>TF-IDF</li>
+            <li>Embeddings</li>
+          </ul>
+        </article>
+      </div>
+      </section>
+
+      <footer class="site-footer">
+        <small>© <span id="y"></span> Pratik Dahal</small>
+      </footer>
+    </main>
+
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

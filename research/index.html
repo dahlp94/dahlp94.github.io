@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Doctoral research by Pratik Dahal on statistical models for structured data, including SDM-CAR for spatial and graph-based Bayesian modeling."
+    />
+    <title>Research | Pratik Dahal</title>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css" />
+    <link rel="stylesheet" href="/styles.css" />
+    <meta name="color-scheme" content="light dark" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <nav class="container">
+      <ul class="brand">
+        <li>
+          <a href="/" aria-label="Home — Pratik Dahal">
+            <img src="/assets/avatar.png" alt="" />
+          </a>
+        </li>
+      </ul>
+      <ul>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/research/" aria-current="page">Research</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a href="/teaching/">Teaching</a></li>
+        <li><a href="/blog/">Writing</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main id="main" class="container">
+      <header>
+        <h1>Research</h1>
+      </header>
+
+      <section>
+        <h2>Research Overview</h2>
+        <p>
+          My doctoral research focuses on statistical models for structured data, particularly settings where observations are connected through spatial or graph-based relationships.
+        </p>
+        <p>
+          I am interested in how these dependence structures can be modeled flexibly, how uncertainty should be represented when the assumed structure may be imperfect, and how Bayesian inference can be made computationally practical for increasingly complex models.
+        </p>
+      </section>
+
+      <section>
+        <h2>Current Research</h2>
+        <h3>SDM-CAR: Spectral-Density–Modulated Conditional Autoregressive Models</h3>
+        <p>
+          Conditional autoregressive (CAR) models are widely used for spatial and graph-structured data, but traditional formulations often impose a fixed form of dependence through a neighborhood structure.
+        </p>
+        <p>
+          SDM-CAR explores a more flexible representation of dependence by modeling spatial structure through the graph spectrum. This makes it possible to represent different patterns of variation across the graph rather than relying on a single fixed dependence pattern.
+        </p>
+        <p>
+          My work also examines Bayesian inference for these models, including computational strategies based on variational inference and MCMC, with attention to uncertainty, model comparison, and predictive behavior under different spatial structures.
+        </p>
+
+        <h3>Why this problem matters</h3>
+        <p>
+          Spatial models depend heavily on assumptions about how nearby or connected observations influence one another. When that dependence structure is too restrictive, the model may miss important patterns in the data. My research studies ways to make that structure more flexible while retaining interpretable uncertainty and computationally feasible inference.
+        </p>
+
+        <h3>Research Approach</h3>
+        <ul class="capabilities">
+          <li>formulate probabilistic models for spatial and graph-structured data;</li>
+          <li>derive or implement Bayesian inference procedures;</li>
+          <li>compare approximate and simulation-based inference;</li>
+          <li>evaluate uncertainty, predictive behavior, and model sensitivity;</li>
+          <li>use simulation and computational experiments to understand model behavior.</li>
+        </ul>
+
+        <p class="research-links">
+          <a
+            href="https://github.com/dahlp94/sdm-car"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Code</a
+          >
+          <span aria-hidden="true">·</span>
+          <a href="/blog/posts/sdm-car-spectral-modeling.html">Technical note</a>
+        </p>
+      </section>
+
+      <section>
+        <h2>Methods &amp; Interests</h2>
+        <ul class="tags" aria-label="Research methods and interests">
+          <li>Bayesian hierarchical modeling</li>
+          <li>Spatial statistics</li>
+          <li>Graph-structured models</li>
+          <li>Conditional autoregressive models</li>
+          <li>Variational inference</li>
+          <li>MCMC</li>
+          <li>Uncertainty quantification</li>
+          <li>Statistical computing</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Research Writing</h2>
+        <article>
+          <h3>
+            <a href="/blog/posts/sdm-car-spectral-modeling.html"
+              >SDM-CAR explained: spectral structure in spatial Bayesian modeling</a
+            >
+          </h3>
+          <p>
+            A technical introduction to the SDM-CAR modeling idea, covering the spectral representation of spatial dependence and the use of variational inference and MCMC.
+          </p>
+        </article>
+      </section>
+
+      <footer class="site-footer">
+        <small>© <span id="y"></span> Pratik Dahal</small>
+      </footer>
+    </main>
+
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
